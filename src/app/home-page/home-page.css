@@ -1,0 +1,85 @@
+.head {
+  position: relative;
+  text-align: center;
+}
+
+
+
+/* Entry animation */
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+} */
+
+.map-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  
+}
+
+.triangular-intro {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  perspective: 1000px;
+  width: 300px;
+  height: 100px;
+  z-index: 10;
+}
+
+.triangle-spinner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: spinForward 8s ease-in-out forwards;
+}
+
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+  background: rgba(105, 145, 155, 0.75);
+  border-radius: 10px;
+  line-height: 100px;
+  text-align: center;
+  backface-visibility: hidden;
+}
+
+/* Each face rotated in 3D space like a triangle rolling forward */
+.face1 {
+  transform: rotateX(0deg) translateZ(50px);
+}
+.face2 {
+  transform: rotateX(120deg) translateZ(50px);
+}
+.face3 {
+  transform: rotateX(240deg) translateZ(50px);
+}
+
+/* Animation rotating forward on X-axis */
+@keyframes spinForward {
+  0% {
+    transform: rotateX(0deg); /* face1 (Welcome) */
+  }
+  33% {
+    transform: rotateX(120deg); /* face2 */
+  }
+  66% {
+    transform: rotateX(240deg); /* face3 */
+  }
+  100% {
+    transform: rotateX(360deg); /* back to face1 */
+  }
+}
