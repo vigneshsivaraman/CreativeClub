@@ -15,13 +15,11 @@ import { Loader } from '../loader/loader';
     MatToolbarModule,
     MatTabsModule,
     MatIconModule,
-    Loader
   ]
 })
 export class Dashboard implements OnInit {
   constructor(private router: Router) {}
 
-  public isLoading = true;
 
   onTabChange(index: number) {
     const routes = ['home', 'userlist'];
@@ -37,6 +35,5 @@ export class Dashboard implements OnInit {
   async ngOnInit(): Promise<void> {
     // Simulate loading delay (e.g. 2 seconds)
     await new Promise(resolve => setTimeout(resolve, 2000));
-    this.isLoading = false;
   }
 }
