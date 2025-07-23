@@ -1,59 +1,44 @@
-.loader {
+.orbit-loader {
   position: relative;
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   margin: 50px auto;
 }
 
-.piece {
+.orbit-loader span {
   position: absolute;
-  width: 50px;
-  height: 50px;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  margin: -5px 0 0 -5px;
+  border-radius: 50%;
   background-color: #3498db;
-  animation: moveOutIn 1.5s infinite ease-in-out;
+  transform-origin: 30px 0px;
+  animation: orbit 1.2s linear infinite;
 }
 
-.piece1 {
-  top: 0;
-  left: 0;
-  --x: -20px;
-  --y: -20px;
-  transform-origin: top left;
-  animation-delay: 0s;
+.orbit-loader span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.orbit-loader span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.orbit-loader span:nth-child(4) {
+  animation-delay: 0.45s;
 }
 
-.piece2 {
-  top: 0;
-  left: 50px;
-  --x: 20px;
-  --y: -20px;
-  transform-origin: top right;
-  animation-delay: 0.2s;
-}
-
-.piece3 {
-  top: 50px;
-  left: 0;
-  --x: -20px;
-  --y: 20px;
-  transform-origin: bottom left;
-  animation-delay: 0.4s;
-}
-
-.piece4 {
-  top: 50px;
-  left: 50px;
-  --x: 20px;
-  --y: 20px;
-  transform-origin: bottom right;
-  animation-delay: 0.6s;
-}
-
-@keyframes moveOutIn {
-  0%, 100% {
-    transform: scale(1) translate(0, 0);
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(30px) scale(0.5);
+    opacity: 0.6;
   }
   50% {
-    transform: scale(1) translate(var(--x), var(--y));
+    transform: rotate(180deg) translateX(30px) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(360deg) translateX(30px) scale(0.5);
+    opacity: 0.6;
   }
 }
