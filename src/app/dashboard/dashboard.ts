@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { Loader } from '../loader/loader';
 import { MatMenuModule } from '@angular/material/menu';
 import { AuthService } from '../services/auth';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-dashboard',
   standalone: true,
@@ -44,6 +45,17 @@ export class Dashboard implements OnInit {
   }
 
   logout() {
-    this.authService.logout();
+    Swal.fire({
+      title:'Are you sure?',
+      text: 'Do you want to log out?',
+      icon: 'info',
+      showCancelButton:true,
+      confirmButtonText: 'yes, logout',
+      cancelButtonText: 'Cancel',
+    }).then((result) => {
+      if(result.isConfirmed){
+        this.authService.logout();
+      }
+    })
     }
 }
