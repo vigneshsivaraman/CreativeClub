@@ -1,7 +1,20 @@
 <mat-toolbar color="primary" class="sticky-header">
-  <mat-icon>dashboard</mat-icon>
+  <img src="../../assets/img/offical/creativeclubicon.png" alt="Dashboard Logo" class="dashboard-logo">
   <span class="title">Creative Clubs</span>
+
+  <span class="spacer"></span> <!-- pushes icons to the right -->
+
+  <!-- Profile Icon -->
+  <button mat-icon-button  aria-label="Profile">   
+    <mat-icon>account_circle</mat-icon>
+  </button>
+
+  <!-- Logout Icon -->
+  <button mat-icon-button (click)="logout()" aria-label="Logout">
+    <mat-icon>logout</mat-icon>
+  </button>
 </mat-toolbar>
+
 
 <mat-tab-group [selectedIndex]="selectedIndex" (selectedIndexChange)="onTabChange($event)"  class="sticky-tabs">
   <mat-tab label="Home"></mat-tab>

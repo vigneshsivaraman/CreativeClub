@@ -4,7 +4,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
 import { Loader } from '../loader/loader';
-
+import { MatMenuModule } from '@angular/material/menu';
+import { AuthService } from '../services/auth';
 @Component({
   selector: 'app-dashboard',
   standalone: true,
@@ -15,10 +16,15 @@ import { Loader } from '../loader/loader';
     MatToolbarModule,
     MatTabsModule,
     MatIconModule,
+    MatMenuModule
   ]
 })
 export class Dashboard implements OnInit {
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    public authService: AuthService,
+
+  ) {}
 
 
   onTabChange(index: number) {
@@ -36,4 +42,8 @@ export class Dashboard implements OnInit {
     // Simulate loading delay (e.g. 2 seconds)
     await new Promise(resolve => setTimeout(resolve, 2000));
   }
+
+  logout() {
+    this.authService.logout();
+    }
 }
