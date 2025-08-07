@@ -9,3 +9,26 @@ html, body {
   height: 100%;
   font-family: Roboto, "Helvetica Neue", sans-serif; 
 }
+
+ .snackbar-error {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+ .snackbar-success {
+  background-color: #2ecc71;
+  color: #fff;
+}
+
+.loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.7); /* Optional: light background */
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

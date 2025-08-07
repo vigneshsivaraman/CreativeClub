@@ -51,3 +51,20 @@ mat-toolbar {
 .tab-content {
   padding: 16px;
 }
+
+.dashboard-logo {
+  width: 3rem;
+  height: auto;
+  display: block;
+}
+
+
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* .dashboard-logo {
+  height: 40px;
+  margin-right: 10px;
+} */

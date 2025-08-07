@@ -1,5 +1,13 @@
-<app-loader *ngIf="isLoading"></app-loader>
-<div class="container login-page" *ngIf="activePage == 'login'">
+@if(isLoading) {
+  <div class="loader-overlay">
+    <app-loader></app-loader>
+  </div>
+} @else {
+
+@if(activePage === 'login'){
+
+
+<div class="container login-page" >
   <div class="head">
 
 <div class="triangular-intro">
@@ -30,5 +38,6 @@
     </map>
   </div>
 </div>
+}
 
-
+}
